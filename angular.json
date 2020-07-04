@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "inventory-app"
+    }
+  },
+  "defaultProject": "inventory-app",
+  "cli": {
+    "analytics": false
+  }
 }
