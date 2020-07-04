@@ -8,15 +8,31 @@ import {Product} from './product.model';
 })
 export class AppComponent {
   title = 'inventory-app';
-  product: Product;
+  products: Product[];
 
   constructor() {
-    let newProduct = new Product('NICEHAT'
-      , 'We Still Here Hat'
-      , '/resources/images/products/black-hat.jpg'
-      , ['Men', 'Accessories', 'Hats']
-      , 29.99);
+    const newProducts = [
+      new Product('MYSHOES'
+      , 'Mike Shoes'
+      , '/resources/images/products/black-shoes.jpg'
+      , ['Men', 'Running Shoes', 'Shoes']
+      , 29.99),
+      new Product('FLUFFYJACKET'
+        , 'Grandpa Jacket'
+        , '/resources/images/products/blue-jacket.jpg'
+        , ['Men', 'Apparel', 'Jackets']
+        , 29.99),
+      new Product('AHAT'
+        , 'We Are Still Here Hat'
+        , '/resources/images/products/black-hat.jpg'
+        , ['Men', 'Accessories', 'Hats']
+        , 29.99)
+    ];
 
-    this.product = newProduct;
+    this.products = newProducts;
+  }
+
+  productWasSelected(product: Product): void {
+    console.log('Product Clicked: ', product);
   }
 }
